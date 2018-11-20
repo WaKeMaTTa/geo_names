@@ -50,10 +50,48 @@ end
 ### Searching
 
 ```ruby
-result = GeoNames::Search.search
-# it returns a hash of the parsed JSON result
+# example of criteria
+criteria = {
+  country_code: 'US',
+  name: 'New York',
+  featureClass: %w[P S],
+  maxRows: 1,
+  style: 'short'
+}
+
+result = GeoNames::Search.search(criteria)
+# it returns a hash of the parsed JSON result like:
+  { "totalResultsCount" => 1360,
+    "geonames" => [
+      { "lng" => "-74.00597",
+        "geonameId" => 5128581,
+        "countryCode" => "US",
+        "name" => "New York",
+        "toponymName" => "New York City",
+        "lat" => "40.71427",
+        "fcl" => "P",
+        "fcode" => "PPL"
+      }
+    ]
+  }
+
 # or
-# raise an exception if the parsed JSON contains an error status_code
+# raise an exception if the parsed JSON contains an error status_code:
+GeoNames::AuthorizationExceptionError
+GeoNames::MissingOrInvalidParameterError
+GeoNames::RecordDoesNotExistError
+GeoNames::OtherError
+GeoNames::NoResultFoundrError
+GeoNames::PostalCodeNotFoundError
+GeoNames::DailyLimitOfCreditsExceededError
+GeoNames::HourlyLimitOfCreditsExceededError
+GeoNames::WeeklyLimitOfCreditsExceededError
+GeoNames::InvalidInputError
+GeoNames::ServerOverloadedExceptionError
+GeoNames::ServiceNotImplementedError
+GeoNames::RadiusTooLargeError
+GeoNames::MaxRowsTooLargeError
+GeoNames::StatusCodeNotImplementedError
 ```
 
 ## Development
