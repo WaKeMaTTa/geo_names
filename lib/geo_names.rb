@@ -61,9 +61,7 @@ module GeoNames
 
     def initialize
       @api_base = 'http://api.geonames.org/'
-      @usernname = nil
-      # @lang = nil
-      # @radius = nil
+      @username = nil
     end
   end
 end
