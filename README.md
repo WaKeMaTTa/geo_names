@@ -1,8 +1,11 @@
 # GeoNames
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/geo_names`. To experiment with that code, run `bin/console` for an interactive prompt.
+GeoNames Ruby API Wrapper
 
-TODO: Delete this and the text above, and describe your gem
+[![Build Status](https://travis-ci.org/WaKeMaTTa/geo_names.svg?branch=master)](https://travis-ci.org/WaKeMaTTa/geo_names)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a69ae1a450119061f8e2/maintainability)](https://codeclimate.com/github/WaKeMaTTa/geo_names/maintainability)
+
+This gem is a ruby API wrapper for [GeoNames](https://www.geonames.org/) [API's](https://www.geonames.org/export/web-services.html).
 
 ## Installation
 
@@ -14,15 +17,44 @@ gem 'geo_names'
 
 And then execute:
 
-    $ bundle
+```bash
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install geo_names
+```bash
+$ gem install geo_names
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+### Pre-requirement
+
+You need a valid `username` to use the gem. You can get it by signing up [here](http://www.geonames.org/login).
+
+If you don't set the `username` it will *raises an exception*.
+
+### Configuration
+
+You can use add initializer for example if you're on Rails.
+
+```ruby
+# config/initializers/geo_names.rb
+
+GeoNames.configure do |config|
+  config.username = ENV['GEONAMES_USERNAME']
+end
+```
+
+### Searching
+
+```ruby
+result = GeoNames::Search.search
+# it returns a hash of the parsed JSON result
+# or
+# raise an exception if the parsed JSON contains an error status_code
+```
 
 ## Development
 
@@ -32,7 +64,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/geo_names. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at [geo_names repository](https://github.com/wakematta/geo_names). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
