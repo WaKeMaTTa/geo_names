@@ -49,6 +49,10 @@ end
 
 ### Searching
 
+#### How to search?
+
+First you need a `Hash` with the criteria that you want to search.
+
 ```ruby
 # example of criteria
 criteria = {
@@ -58,25 +62,32 @@ criteria = {
   maxRows: 1,
   style: 'short'
 }
+```
 
+Then you can search
+```ruby
 result = GeoNames::Search.search(criteria)
-# it returns a hash of the parsed JSON result like:
-  { "totalResultsCount" => 1360,
-    "geonames" => [
-      { "lng" => "-74.00597",
-        "geonameId" => 5128581,
-        "countryCode" => "US",
-        "name" => "New York",
-        "toponymName" => "New York City",
-        "lat" => "40.71427",
-        "fcl" => "P",
-        "fcode" => "PPL"
-      }
-    ]
-  }
+```
 
-# or
-# raise an exception if the parsed JSON contains an error status_code:
+The `result` it will be a `Hash` if was successful, like this one:
+```ruby
+{ "totalResultsCount" => 1360,
+  "geonames" => [
+    { "lng" => "-74.00597",
+      "geonameId" => 5128581,
+      "countryCode" => "US",
+      "name" => "New York",
+      "toponymName" => "New York City",
+      "lat" => "40.71427",
+      "fcl" => "P",
+      "fcode" => "PPL"
+    }
+  ]
+}
+```
+
+Or if something was wrong it will raise an error of this list:
+```ruby
 GeoNames::AuthorizationExceptionError
 GeoNames::MissingOrInvalidParameterError
 GeoNames::RecordDoesNotExistError
@@ -92,6 +103,52 @@ GeoNames::ServiceNotImplementedError
 GeoNames::RadiusTooLargeError
 GeoNames::MaxRowsTooLargeError
 GeoNames::StatusCodeNotImplementedError
+```
+
+#### Search engines available
+
+```ruby
+GeoNames::Address
+GeoNames::Astergdem
+GeoNames::Children
+GeoNames::Cities
+GeoNames::Configuration
+GeoNames::Contains
+GeoNames::CountryCode
+GeoNames::CountryInfo
+GeoNames::CountrySubdivision
+GeoNames::Earthquakes
+GeoNames::ExtendedFindNearby
+GeoNames::FindNearByWeather
+GeoNames::FindNearby
+GeoNames::FindNearbyPOIsOSM
+GeoNames::FindNearbyPlaceName
+GeoNames::FindNearbyPostalCodes
+GeoNames::FindNearbyStreets
+GeoNames::FindNearbyStreetsOSM
+GeoNames::FindNearbyWikipedia
+GeoNames::FindNearestAddress
+GeoNames::FindNearestIntersection
+GeoNames::FindNearestIntersectionOSM
+GeoNames::GeoCodeAddress
+GeoNames::Get
+GeoNames::Gtopo30
+GeoNames::Hierarchy
+GeoNames::Neighbourhood
+GeoNames::Neighbours
+GeoNames::Ocean
+GeoNames::PostalCodeCountryInfo
+GeoNames::PostalCodeLookup
+GeoNames::PostalCodeSearch
+GeoNames::Search
+GeoNames::Siblings
+GeoNames::Srtm1
+GeoNames::Srtm3
+GeoNames::Timezone
+GeoNames::Weather
+GeoNames::WeatherIcao
+GeoNames::WikipediaBoundingBox
+GeoNames::WikipediaSearch
 ```
 
 ## Development
