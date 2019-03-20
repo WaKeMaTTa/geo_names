@@ -31,6 +31,8 @@ module GeoNames
 
     def make_request
       RestClient.get(url, params: params)
+    rescue RestClient::Unauthorized => e
+      e.response.to_s
     end
 
     def parse(json_string)
