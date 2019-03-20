@@ -62,12 +62,10 @@ module GeoNames
         raise(OtherError, message)
       when 13
         raise(DatabaseTimeoutError, message)
-      when 13
-        raise(DatabaseTimeoutError, message)
       when 14
         raise(MissingOrInvalidParameterError, message)
       when 15
-        raise(NoResultFoundrError, message)
+        raise(NoResultFoundError, message)
       when 16
         raise(DuplicateExceptionError, message)
       when 17
@@ -94,19 +92,20 @@ module GeoNames
     end
   end
 
-  class AuthorizationExceptionError            < StandardError; end
-  class MissingOrInvalidParameterError         < StandardError; end
-  class RecordDoesNotExistError                < StandardError; end
-  class OtherError                             < StandardError; end
-  class NoResultFoundrError                    < StandardError; end
-  class PostalCodeNotFoundError                < StandardError; end
-  class DailyLimitOfCreditsExceededError       < StandardError; end
-  class HourlyLimitOfCreditsExceededError      < StandardError; end
-  class WeeklyLimitOfCreditsExceededError      < StandardError; end
-  class InvalidInputError                      < StandardError; end
-  class ServerOverloadedExceptionError         < StandardError; end
-  class ServiceNotImplementedError             < StandardError; end
-  class RadiusTooLargeError                    < StandardError; end
-  class MaxRowsTooLargeError                   < StandardError; end
-  class StatusCodeNotImplementedError          < StandardError; end
+  class AuthorizationExceptionError       < StandardError; end
+  class DatabaseTimeoutError              < StandardError; end
+  class MissingOrInvalidParameterError    < StandardError; end
+  class RecordDoesNotExistError           < StandardError; end
+  class OtherError                        < StandardError; end
+  class NoResultFoundError                < StandardError; end
+  class PostalCodeNotFoundError           < StandardError; end
+  class DailyLimitOfCreditsExceededError  < StandardError; end
+  class HourlyLimitOfCreditsExceededError < StandardError; end
+  class WeeklyLimitOfCreditsExceededError < StandardError; end
+  class InvalidInputError                 < StandardError; end
+  class ServerOverloadedExceptionError    < StandardError; end
+  class ServiceNotImplementedError        < StandardError; end
+  class RadiusTooLargeError               < StandardError; end
+  class MaxRowsTooLargeError              < StandardError; end
+  class StatusCodeNotImplementedError     < StandardError; end
 end
