@@ -60,8 +60,6 @@ module GeoNames
         raise(OtherError, message)
       when 13
         raise(DatabaseTimeoutError, message)
-      when 13
-        raise(DatabaseTimeoutError, message)
       when 14
         raise(MissingOrInvalidParameterError, message)
       when 15
