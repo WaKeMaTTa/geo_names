@@ -89,10 +89,11 @@ The `result` it will be a `Hash` if was successful, like this one:
 Or if something was wrong it will raise an error of this list:
 ```ruby
 GeoNames::AuthorizationExceptionError
+GeoNames::DatabaseTimeoutError
 GeoNames::MissingOrInvalidParameterError
 GeoNames::RecordDoesNotExistError
 GeoNames::OtherError
-GeoNames::NoResultFoundrError
+GeoNames::NoResultFoundError
 GeoNames::PostalCodeNotFoundError
 GeoNames::DailyLimitOfCreditsExceededError
 GeoNames::HourlyLimitOfCreditsExceededError
