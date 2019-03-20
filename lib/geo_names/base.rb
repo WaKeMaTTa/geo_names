@@ -65,7 +65,7 @@ module GeoNames
       when 14
         raise(MissingOrInvalidParameterError, message)
       when 15
-        raise(NoResultFoundrError, message)
+        raise(NoResultFoundError, message)
       when 16
         raise(DuplicateExceptionError, message)
       when 17
@@ -97,7 +97,7 @@ module GeoNames
   class MissingOrInvalidParameterError    < StandardError; end
   class RecordDoesNotExistError           < StandardError; end
   class OtherError                        < StandardError; end
-  class NoResultFoundrError               < StandardError; end
+  class NoResultFoundError                < StandardError; end
   class PostalCodeNotFoundError           < StandardError; end
   class DailyLimitOfCreditsExceededError  < StandardError; end
   class HourlyLimitOfCreditsExceededError < StandardError; end
