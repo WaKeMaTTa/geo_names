@@ -4,8 +4,16 @@ GeoNames Ruby API Wrapper
 
 [![Build Status](https://travis-ci.org/WaKeMaTTa/geo_names.svg?branch=master)](https://travis-ci.org/WaKeMaTTa/geo_names)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a69ae1a450119061f8e2/maintainability)](https://codeclimate.com/github/WaKeMaTTa/geo_names/maintainability)
+![GitHub](https://img.shields.io/github/license/wakematta/geo_names.svg)
 
 This gem is a ruby API wrapper for [GeoNames](https://www.geonames.org/) [API's](https://www.geonames.org/export/web-services.html).
+
+## Security
+
+Multifactor authentication:
+
+![Security github.com account](https://img.shields.io/badge/github.com-enabled-brightgreen.svg)
+![Security rubygems.org account](https://img.shields.io/badge/rubygems.org-enabled-brightgreen.svg)
 
 ## Installation
 
