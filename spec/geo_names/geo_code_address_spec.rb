@@ -24,8 +24,6 @@ RSpec.describe GeoNames::GeoCodeAddress do
 
   it 'works' do
     GeoNames.configuration.username = username
-    expect do
-      GeoNames::GeoCodeAddress.search
-    end.to raise_error(GeoNames::OtherError)
+    expect(GeoNames::GeoCodeAddress.search).to eq({})
   end
 end
