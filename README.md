@@ -64,7 +64,7 @@ First you need a `Hash` with the criteria that you want to search.
 ```ruby
 # example of criteria
 criteria = {
-  country_code: 'US',
+  country: 'US',
   name: 'New York',
   featureClass: %w[P S],
   maxRows: 1,
